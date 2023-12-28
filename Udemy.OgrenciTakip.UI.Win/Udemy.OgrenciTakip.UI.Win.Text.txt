@@ -1,0 +1,81 @@
+********************************************
+***********Class Açýklamalarý***************
+********************************************
+
+-Kullanýcý arayüzünün tanýmlancaðý kýsýmdýr.
+
+--------------------------------------------
+
+- Ýlk olarak Win kýsmýnýn tasarlanmasýndan baþlanarak adým adým gidilecektir.
+
+-----------------------------------------
+
+- Ýki adet base form tanýmýmýz olacak. Diðer formlar bu iki base formdan türeyecek.
+
+1- Veri giriþi yapmýþ olduðumuz formlar için bir tane base form 
+2- Kartlar olarak isimlendirilen, listelemeleri yapmýþ olduðumuz ve kullanýcýya göstermiþ olduðumuz
+base form
+
+BaseKartForm.cs ->    Veri giriþi olarak kullanacaðýmýz formlar için
+BaseKartlarForm.cs -> Listeleme yapacaðýmýz formlar için
+
+-------------------------------------------
+
+-> "BaseKartForm" da Çýkýþ isimli buton "ShourtcutKeyDisplayString" kýsmýna "Esc" yazýlýr. "Esc" 
+normalde "ItemShourtKey" kýsmýna kýsayol tuþu olarak atanamaz. Daha sonra bu olayý 
+keydown olaylarýnda tanýmlayacaðýz.
+
+-------------------------------------------
+
+-> Açmýþ olduðumuz UserControls/Controls klasörünün içersine kullanacaðýmýz kontrollerin kendimize 
+özel ayarlar içerecek þekilde class' lar hazýrlamak için kullanýlýr. ButtonEdit, TextEdit vb kontroller
+için denetim saðlamamýzý saðlar.
+
+--------------------------------------------
+
+-> [ToolboxItem(true)] attribute baþlýðý ile oluþturduðumuz custým tool'u Toolbox kýsmýna taþýrýz.
+
+public event EventHandler<IdChangedEventArgs> IdChanged = delegate { }; satýrý ile IdChanged event'ýnýn boþ deðer 
+döndürmesini engellemiþ oluruz. Böylelikle sistem hatalarýndan kurtulmuþ oluruz. Bu iþlemi delegate{} iþlemi yaparýz.
+
+---------------------------------------------
+Navigator, veriler arasýnda dolaþmamýzý saðlayan araç çubuðudur.
+Üç adet navigator yapacaðýz. 
+
+SmallNavigator : Çok fazla veri olma ihtimali olmayan tabloalarda kullanýlacak.
+LongNavigator  : Veriler arasýnda dolaþýlabilir. Önceki sayfa ve sonraki sayfaya geçiþlerde bu navigator kullanýlýr.
+InsUpNavigator : Kayýtlar arasýnda dolaþmamýzý saðlayacak navigator.
+
+Bu kontroller user control ile oluþturulacaktýr. Ama diðer kontrollerimiz gibi kod ile de oluþturulabilir.
+Görsel deðiþimi hemen görebilmek için user control kullanýldý.
+
+"ImageCollection" ile oluþturacaðýmýz navigator kontrolünün simgelerini deðiþtirebiliriz.
+
+Navigator da "TextLocation" isminde bir ayar vardýr. Bu ayar ile navigator çubuðumuza text ekleyebiliriz.
+
+-------------------------------------------------
+
+GridControl kýsmýný ayarlayacaðýz. Default olarak kolonsuz gelen grid'e kolon ekleyeceðiz.
+Baþlýk ve yazý kontrollerini yapacaðýz.
+
+GridControl datalarý listelediðimiz ve ekranda gösterdiðimiz kontroldür.
+
+Boþ instance oluþturma örnek; "Public void MyGridView(){ }"
+
+
+"MyGridInfoRegistrator" class'ýnýn içerisinde override edebileceðimiz diðer methodlar
+1- CreateHandler ile Handler'lara müdahale edebiliyoruz.
+2- CreatePainter ile GridView'in þekline müdahale edebiliyoruz. Çizgilerinin rengi, kalýnlýðý, arka plan kalýnlýðý vb.
+3- CreateViewInfo ile diðer farklý özelliklere müdahale edebiliyoruz.
+4- 
+--------------------------------------------------
+
+BandedGridView 
+
+Normal GridView' in çizgili hali olarak düþünülebilir.
+
+1- OnColumnChangedCore methodunu override ederek öncelikle girilen deðer tipinin türü "RepositoryDateEdit"
+ise ortalamasý için ""column.AppearanceCell.TextOptions.HAlignment = HorzAlignment.Center;" komutunu kullandýk
+2-  
+
+

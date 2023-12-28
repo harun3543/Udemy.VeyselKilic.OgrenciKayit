@@ -1,0 +1,6 @@
+********************************************
+***********Class Açýklamalarý***************
+********************************************
+
+-Çekilen datalarý iþleyeceðimiz, gerekli iþlemler yapýldýktan sonra 
+DAL katmaný ile datalarý yazacaðýmýz class'týr.

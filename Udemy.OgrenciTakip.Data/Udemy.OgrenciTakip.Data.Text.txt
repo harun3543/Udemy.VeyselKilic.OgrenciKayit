@@ -1,0 +1,6 @@
+********************************************
+***********Class Açýklamalarý***************
+********************************************
+
+- Oluþturulacak context leri 
+- Migration iþlemlerini takip edeceðimiz kýsýmdýr.

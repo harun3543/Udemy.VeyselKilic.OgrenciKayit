@@ -1,0 +1,6 @@
+********************************************
+***********Class Açýklamalarý***************
+********************************************
+
+-Bu class'ta data katmanýna baðlanýp verileri çekme ve verileri yazma iþlemleri 
+yapýlacaktýr.

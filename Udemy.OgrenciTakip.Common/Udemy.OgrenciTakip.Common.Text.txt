@@ -1,0 +1,9 @@
+********************************************
+********Class Açýklamalarý******************
+********************************************
+
+Genel olarak kullanacaðýmýz metodlarý buraya yazacaðýz. Bu classtaki methodlarý birden çok katmanda 
+kullanacaðýz.
+
+1- Genel kullanýlacak bazý fonksiyonlar olacak
+2- Enum tanýmlarýmýz olacak

@@ -1,0 +1,7 @@
+********************************************
+***********Class Açýklamalarý***************
+********************************************
+
+-Database ile alakalý model classlarýnýn tutulacaðý class library dir. 
+
+
