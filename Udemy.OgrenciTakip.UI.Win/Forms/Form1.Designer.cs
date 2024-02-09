@@ -29,6 +29,7 @@ namespace Udemy.OgrenciTakip.UI.Win.Forms
         /// </summary>
         private void InitializeComponent()
         {
+<<<<<<< HEAD
             this.mySimpleButton1 = new Udemy.OgrenciTakip.UI.Win.UserControls.Controls.MySimpleButton();
             this.SuspendLayout();
             // 
@@ -43,21 +44,52 @@ namespace Udemy.OgrenciTakip.UI.Win.Forms
             this.mySimpleButton1.TabIndex = 0;
             this.mySimpleButton1.Text = "mySimpleButton1";
             this.mySimpleButton1.Click += new System.EventHandler(this.mySimpleButton1_Click);
+=======
+            this.myToogleSwitch1 = new Udemy.OgrenciTakip.UI.Win.UserControls.Controls.MyToogleSwitch();
+            ((System.ComponentModel.ISupportInitialize)(this.myToogleSwitch1.Properties)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // myToogleSwitch1
+            // 
+            this.myToogleSwitch1.EnterMoveNextControl = true;
+            this.myToogleSwitch1.Location = new System.Drawing.Point(153, 308);
+            this.myToogleSwitch1.Name = "myToogleSwitch1";
+            this.myToogleSwitch1.Properties.Appearance.ForeColor = System.Drawing.Color.Maroon;
+            this.myToogleSwitch1.Properties.Appearance.Options.UseForeColor = true;
+            this.myToogleSwitch1.Properties.AutoHeight = false;
+            this.myToogleSwitch1.Properties.AutoWidth = true;
+            this.myToogleSwitch1.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.myToogleSwitch1.Properties.OffText = "Pasif";
+            this.myToogleSwitch1.Properties.OnText = "Aktif";
+            this.myToogleSwitch1.Size = new System.Drawing.Size(97, 24);
+            this.myToogleSwitch1.StatusBarAciklama = "Kartın Kullanım Durmunu Seçiniz.";
+            this.myToogleSwitch1.TabIndex = 0;
+>>>>>>> 37e19e96e475ad081f3cb469c00b4e89a1460322
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(732, 515);
+<<<<<<< HEAD
             this.Controls.Add(this.mySimpleButton1);
+=======
+            this.Controls.Add(this.myToogleSwitch1);
+>>>>>>> 37e19e96e475ad081f3cb469c00b4e89a1460322
             this.Name = "Form1";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.myToogleSwitch1.Properties)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
+<<<<<<< HEAD
         private UserControls.Controls.MySimpleButton mySimpleButton1;
+=======
+        private UserControls.Controls.MyToogleSwitch myToogleSwitch1;
+>>>>>>> 37e19e96e475ad081f3cb469c00b4e89a1460322
     }
 }
