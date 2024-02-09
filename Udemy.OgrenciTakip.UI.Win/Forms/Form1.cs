@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Udemy.OgrenciTakip.UI.Win.Forms.BaseForms;
+using Udemy.OgrenciTakip.UI.Win.Forms.OkulForms;
 
 namespace Udemy.OgrenciTakip.UI.Win.Forms
 {
@@ -16,6 +17,12 @@ namespace Udemy.OgrenciTakip.UI.Win.Forms
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void mySimpleButton1_Click(object sender, EventArgs e)
+        {
+            OkulKartlari kartlar = new OkulKartlari();
+            kartlar.ShowDialog();
         }
     }
 }

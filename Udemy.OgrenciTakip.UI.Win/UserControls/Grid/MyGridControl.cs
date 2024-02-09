@@ -14,6 +14,7 @@ using DevExpress.XtraGrid.Registrator;
 namespace Udemy.OgrenciTakip.UI.Win.UserControls.Grid
 {
     [ToolboxItem(true)]
+    #region "MyGridControl Class"
     public class MyGridControl : GridControl
     {
         /*
@@ -26,14 +27,16 @@ namespace Udemy.OgrenciTakip.UI.Win.UserControls.Grid
 
         }
 
+        #region "BaseView Override Method"
         protected override BaseView CreateDefaultView()
         {
+            // DevExpress.XtraGrid.Views.Base paketinde yer alan bir "BaseView" abstract classtır. 
             //view CreateView'den dolayı "BaseView" olarak oluşturulur fakat bu fonksiyonun bütün fonksiyonları bizim işimizi görmüyor.
             //BasView' i GridView'e dönüştürmemiz gerekir. GridView değilde MyGridView de yapabilirdik.
             var view = (GridView)CreateView("MyGridView");
 
             //Marron = Bordo
-            view.Appearance.ViewCaption.ForeColor = Color.Maroon; 
+            view.Appearance.ViewCaption.ForeColor = Color.Maroon;
 
             //"HeaderPanel" ayarlamak genel olarak yapılacak bir değişikliktir. Kolon eklendikçe bu genel ayarlara göre eklenir.
             view.Appearance.HeaderPanel.ForeColor = Color.Maroon;
@@ -44,7 +47,7 @@ namespace Udemy.OgrenciTakip.UI.Win.UserControls.Grid
             view.Appearance.FooterPanel.ForeColor = Color.Maroon;
 
             //Yazımız tahoma 8,25 ve bold olarak gelecek.
-            view.Appearance.FooterPanel.Font = new Font(new FontFamily("Tahoma"),8.25f,FontStyle.Bold);
+            view.Appearance.FooterPanel.Font = new Font(new FontFamily("Tahoma"), 8.25f, FontStyle.Bold);
 
             //Opiton kısmına basınca devexpress bir menü açar. Bu menüyü kendi isteğimize göre şekillendireceğiz.
             view.OptionsMenu.EnableColumnMenu = false;
@@ -103,6 +106,9 @@ namespace Udemy.OgrenciTakip.UI.Win.UserControls.Grid
             return view;
         }
 
+        #endregion
+
+        #region "RegisterAvailableViewsCore Override Method"
         /*
          * Amacı : GridControl' de oluşturduğumuz MyGridView' i kullanmak için yapıldı. GridInfoRegistrator default 
          * olduğu kendimiz oluşturacağız.
@@ -113,6 +119,9 @@ namespace Udemy.OgrenciTakip.UI.Win.UserControls.Grid
             collection.Add(new MyGridInfoRegistrator());
         }
 
+        #endregion
+
+        #region "MyGridInfoRegistrator Class"
         private class MyGridInfoRegistrator : GridInfoRegistrator
         {
             /*
@@ -125,10 +134,16 @@ namespace Udemy.OgrenciTakip.UI.Win.UserControls.Grid
             public override BaseView CreateView(GridControl grid) => new MyGridView(grid);  //{return new MyGridView(grid);}
 
         }
+
+        #endregion
     }
+
+    #endregion
+
+    #region "MyGridView Class"
     /*
      * Biz bir kolon ekleyip o kolonun ColumnEdit bölümüne RepositoryItemDate türünde bir nesne seçilip
-     * eklendiği zaman otomatik olarak kolonumuzun "value" kısmında ortalamasını aynı  zamanda da tarih
+     * eklendiği zaman otomatik olarak kolonumuzun "value" kısmında ortalamasını aynı  zamanda da "tarih"
      * kısmının DateTimeAdvancedCaried olarak değişmesini istiyoruz.
      * 
      * Biz burada tarih yazdıkça örneğin; günü yazdığında otomatik aya, ayı yazdığında otomatik yıla 
@@ -136,7 +151,7 @@ namespace Udemy.OgrenciTakip.UI.Win.UserControls.Grid
      */
     public class MyGridView : GridView, IStatusBarKisayol
     {
-        
+         
         #region "Properties"
         public string StatusBarKisayol { get; set; }
         public string StatusBarKisayolAciklama { get; set; }
@@ -150,11 +165,13 @@ namespace Udemy.OgrenciTakip.UI.Win.UserControls.Grid
         *
         */
         public MyGridView() { } //boş instance oluşturduk, Designer.cs kısmında hata çıkmaması için
-        public MyGridView(GridControl ownerGrid) : base(ownerGrid) { }  
+        public MyGridView(GridControl ownerGrid) : base(ownerGrid) { }
         protected override void OnColumnChangedCore(GridColumn column)
         {
             base.OnColumnChangedCore(column);
 
+            // her column'a columnEdit verilmez. Sadece maskelenmek istenen column'lara columnedit 
+            // atanır.
             if (column.ColumnEdit == null) return;
 
             //kolonun tipi "RepositoryItemDateEdit" ise kolon yazısı otomatik olarak ortalanmış olacak.
@@ -175,20 +192,10 @@ namespace Udemy.OgrenciTakip.UI.Win.UserControls.Grid
             return new MyCreateColumnCollection(this);
         }
     }
-    public class MyCreateColumnCollection : GridColumnCollection
-    {
-        public MyCreateColumnCollection(ColumnView view) : base(view) { }
 
-        //Column create edililirken müdehale edebilmek için "CreateColumn" methodu override edilir.
-        protected override GridColumn CreateColumn()
-        {
-            var column = new MyGridColumn(); //Kendi oluşturduğumuz StatusBarAciklama eklediğimiz GridColumn
-            column.OptionsColumn.AllowEdit = false;
-            return column;
+    #endregion
 
-        }
-
-    }
+    #region "MyGridColumn Class"
     public class MyGridColumn : GridColumn, IStatusBarKisayol
     {
         #region "Properties"
@@ -200,4 +207,25 @@ namespace Udemy.OgrenciTakip.UI.Win.UserControls.Grid
 
     }
 
+    #endregion
+
+    #region "MyCreateColumnCollection Class" 
+    public class MyCreateColumnCollection : GridColumnCollection
+    {
+        public MyCreateColumnCollection(ColumnView view) : base(view) { }
+
+        //Column create edililirken müdehale edebilmek için "CreateColumn" methodu override edilir.
+        protected override GridColumn CreateColumn()
+        {
+            //Kendi oluşturduğumuz StatusBarAciklamalı bir GridColumn
+            var column = new MyGridColumn(); 
+            column.OptionsColumn.AllowEdit = false;  //tüm column ların editlenmesini kapat
+            return column;
+
+        }
+
+    }
+
+    #endregion
+    
 }
