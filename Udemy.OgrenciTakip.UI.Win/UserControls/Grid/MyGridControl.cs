@@ -11,10 +11,11 @@ using System.Drawing;
 using DevExpress.XtraEditors.Controls;
 using DevExpress.XtraGrid.Registrator;
 
+
 namespace Udemy.OgrenciTakip.UI.Win.UserControls.Grid
 {
     [ToolboxItem(true)]
-    #region "MyGridControl Class"
+
     public class MyGridControl : GridControl
     {
         /*
@@ -22,19 +23,22 @@ namespace Udemy.OgrenciTakip.UI.Win.UserControls.Grid
         *Bu kontroller için ayrı ayrı class oluşturduk.
         *Column lara tıkladığımızda daha önce açıklama için oluşturduğumuz interface yi kullanacağız.
         */
-        public MyGridControl()
-        {
-
-        }
-
-        #region "BaseView Override Method"
+        public MyGridControl(){ }
+        /*
+         * Default olarak gelen view'ın oluştulma aşamasına müdehale için override edildi.
+         * Bir control'ün birden fazla view'ı olabilir.
+         */
         protected override BaseView CreateDefaultView()
         {
             // DevExpress.XtraGrid.Views.Base paketinde yer alan bir "BaseView" abstract classtır. 
-            //view CreateView'den dolayı "BaseView" olarak oluşturulur fakat bu fonksiyonun bütün fonksiyonları bizim işimizi görmüyor.
-            //BasView' i GridView'e dönüştürmemiz gerekir. GridView değilde MyGridView de yapabilirdik.
+            // view CreateView'den dolayı "BaseView" olarak oluşturulur fakat "BaseView" fonksiyonun bütün fonksiyonları
+            // bizim işimizi görmüyor.
+            // BaseView' i GridView'e dönüştürmemiz gerekir. GridView değilde MyGridView de yapabilirdik.
+            // Önemli olan "GridView" deki property lere ulaşmak
+            // Burada yapılan atamaların hepsi genel atamarldır. Tüm cloumn'ları etkiler.
             var view = (GridView)CreateView("MyGridView");
 
+            //Pencere başlık yazı rengi
             //Marron = Bordo
             view.Appearance.ViewCaption.ForeColor = Color.Maroon;
 
@@ -44,23 +48,27 @@ namespace Udemy.OgrenciTakip.UI.Win.UserControls.Grid
 
             //Kolon bazlı atama yapacaksak ya formdan el ile yapmamız gerekir veya "CreateCloumn" bölümüne yaptığımız özel 
             //bir yol izlememiz gerekir. Ancak bu şekilde kolon bazlı atama yapılabilir.
-            view.Appearance.FooterPanel.ForeColor = Color.Maroon;
+            view.Appearance.FooterPanel.ForeColor = Color.Maroon; //Yazımız bordo renginde
+            view.Appearance.FooterPanel.Font = 
+                new Font(new FontFamily("Tahoma"), 8.25f, FontStyle.Bold);  //Yazımız tahoma 8,25 ve bold olarak gelecek.
 
-            //Yazımız tahoma 8,25 ve bold olarak gelecek.
-            view.Appearance.FooterPanel.Font = new Font(new FontFamily("Tahoma"), 8.25f, FontStyle.Bold);
+            /* -----------------------------------------------------------------------------------------
+             * OptionMenu herhangi bir menünün üzerine gelip sağ tuşa basıldığında açılan menüyü düzenlemek
+             * için ayarladık.
+             -------------------------------------------------------------------------------------------*/
 
             //Opiton kısmına basınca devexpress bir menü açar. Bu menüyü kendi isteğimize göre şekillendireceğiz.
             view.OptionsMenu.EnableColumnMenu = false;
             view.OptionsMenu.EnableFooterMenu = false;
             view.OptionsMenu.EnableGroupPanelMenu = false; //grupların üzerindeki menü
 
-            //Enter tuşu satır üzerinde gezinme default olarak kapalıdır. Bunu açacağız.
+            //Enter tuşuna basıldıkça satır üzerinde gezinme default olarak kapalıdır. Bunu açacağız.
             view.OptionsNavigation.EnterMoveNextColumn = true;
 
-            //Yazdırma- OptionPrint
+            //OptionPrint - Yazdırma 
             view.OptionsPrint.AutoWidth = false; //Herhangi bir yazdırmada sayfa genişliğine müdehaleyi kapattık.
             view.OptionsPrint.PrintFooter = false; //Footer bölümlerinin yazıcıya gönderilmesi istemiyoruz.
-            view.OptionsPrint.PrintGroupFooter = false;
+            view.OptionsPrint.PrintGroupFooter = false; 
 
             //OptionView
             view.OptionsView.ShowViewCaption = true; //"MainView" ismindeki başlık kısmını gösterir.
@@ -72,7 +80,12 @@ namespace Udemy.OgrenciTakip.UI.Win.UserControls.Grid
 
             //İki tane kolonun default olarak gelmesini istiyoruz.
 
-            //----------------------------id kolonu ekle-------------------------------------
+            #region "Id kolonu eklemek"
+
+            /*-----------------------------------------------------------------------------
+             ----------------------------id kolonu ekle------------------------------------
+             ------------------------------------------------------------------------------*/
+
             var idColumn = new MyGridColumn
             {
                 Caption = "Id",     // Kolon başlığı
@@ -87,10 +100,15 @@ namespace Udemy.OgrenciTakip.UI.Win.UserControls.Grid
              * Id kolonumuzun hem ekranda hem de "Özelleştirme(Customization Form)" ekranında görünmesini istemiyoruz. Bu yüzden aşağıdaki
              * ayarı yaparız.
              */
-            idColumn.OptionsColumn.ShowInCustomizationForm = false;
-            view.Columns.Add(idColumn);
+            idColumn.OptionsColumn.ShowInCustomizationForm = false; // Id clolumn'u gizleme ayarı
+            view.Columns.Add(idColumn);  // column ekle
 
-            //----------------------------kod kolonu ekle------------------------------------
+            #endregion
+
+            #region "Kod kolonu eklemek"
+            /*-------------------------------------------------------------------------------
+            ---------------------------- "kod" kolonu ekle ----------------------------------
+            ---------------------------------------------------------------------------------*/
 
             var kodColumn = new MyGridColumn
             {
@@ -103,44 +121,31 @@ namespace Udemy.OgrenciTakip.UI.Win.UserControls.Grid
             kodColumn.AppearanceCell.Options.UseTextOptions = true; //yukarıdakinin geçerli olması bunu yazmamız gerekir.
             view.Columns.Add(kodColumn);
 
+            #endregion
+
             return view;
         }
-
-        #endregion
-
-        #region "RegisterAvailableViewsCore Override Method"
         /*
          * Amacı : GridControl' de oluşturduğumuz MyGridView' i kullanmak için yapıldı. GridInfoRegistrator default 
-         * olduğu kendimiz oluşturacağız.
+         * aktif olmadığı için kendimiz oluşturacağız.
          */
         protected override void RegisterAvailableViewsCore(InfoCollection collection)
         {
             base.RegisterAvailableViewsCore(collection);
             collection.Add(new MyGridInfoRegistrator());
         }
-
-        #endregion
-
-        #region "MyGridInfoRegistrator Class"
         private class MyGridInfoRegistrator : GridInfoRegistrator
         {
-            /*
-             * 1- Oluşacak gridview'in ismine müdehale edeceğiz.
-             * 2- 
-             */
+            
             public override string ViewName => "MyGridView";
 
             //"CreateView" ile oluşacak yeni view' lerin oluşumuna etki etmiş olduk.
             public override BaseView CreateView(GridControl grid) => new MyGridView(grid);  //{return new MyGridView(grid);}
 
         }
-
-        #endregion
+   
     }
-
-    #endregion
-
-    #region "MyGridView Class"
+   
     /*
      * Biz bir kolon ekleyip o kolonun ColumnEdit bölümüne RepositoryItemDate türünde bir nesne seçilip
      * eklendiği zaman otomatik olarak kolonumuzun "value" kısmında ortalamasını aynı  zamanda da "tarih"
@@ -166,6 +171,11 @@ namespace Udemy.OgrenciTakip.UI.Win.UserControls.Grid
         */
         public MyGridView() { } //boş instance oluşturduk, Designer.cs kısmında hata çıkmaması için
         public MyGridView(GridControl ownerGrid) : base(ownerGrid) { }
+
+        /*
+         * "OnColumnChangedCore" yeni bir cloumn oluşturulma aşamsına müdehale etmek için override işlemi 
+         * yapıldı.
+         */
         protected override void OnColumnChangedCore(GridColumn column)
         {
             base.OnColumnChangedCore(column);
@@ -184,18 +194,35 @@ namespace Udemy.OgrenciTakip.UI.Win.UserControls.Grid
         }
 
         /*
-        *Yeni bir column oluşturulduğunda kendi istediğimiz özelliklerde bir kolon oluşturması için
-        *aşağıda "CreateColumnCollection" fonksiyonunu oluşturmamız gerekli.
+        * Yeni bir column oluşturulduğunda kendi istediğimiz özelliklerde bir kolon oluşturması için
+        * aşağıda "CreateColumnCollection" fonksiyonunu oluşturmamız gerekli.
+        * "MyCreateColumnCollection" isimli classtan yeni bir nesne oluşturup geri döndürür.
+        * "MyCreateColumnCollection" class oluşturulacak yeni column'ların nasıl olacağının belirler.
         */
         protected override GridColumnCollection CreateColumnCollection()
         {
             return new MyCreateColumnCollection(this);
         }
+
+        /*
+         * Aşağıda yeni eklenen column'lar için AllowEdit özelliğini kapatan bir column nesnesi oluşturuldu
+         */
+        private class MyCreateColumnCollection : GridColumnCollection
+        {
+            public MyCreateColumnCollection(ColumnView view) : base(view){ }
+
+            //Column create edililirken müdehale edebilmek için "CreateColumn" methodu override edilir.
+            protected override GridColumn CreateColumn()
+            {
+                //Kendi oluşturduğumuz StatusBarAciklamalı bir GridColumn
+                var column = new MyGridColumn();
+                column.OptionsColumn.AllowEdit = false;  //tüm column ların editlenmesini kapat
+                return column;
+
+            }
+
+        }
     }
-
-    #endregion
-
-    #region "MyGridColumn Class"
     public class MyGridColumn : GridColumn, IStatusBarKisayol
     {
         #region "Properties"
@@ -203,29 +230,6 @@ namespace Udemy.OgrenciTakip.UI.Win.UserControls.Grid
         public string StatusBarKisayolAciklama { get; set; }
         public string StatusBarAciklama { get; set; }
         #endregion
-
-
     }
-
-    #endregion
-
-    #region "MyCreateColumnCollection Class" 
-    public class MyCreateColumnCollection : GridColumnCollection
-    {
-        public MyCreateColumnCollection(ColumnView view) : base(view) { }
-
-        //Column create edililirken müdehale edebilmek için "CreateColumn" methodu override edilir.
-        protected override GridColumn CreateColumn()
-        {
-            //Kendi oluşturduğumuz StatusBarAciklamalı bir GridColumn
-            var column = new MyGridColumn(); 
-            column.OptionsColumn.AllowEdit = false;  //tüm column ların editlenmesini kapat
-            return column;
-
-        }
-
-    }
-
-    #endregion
     
 }

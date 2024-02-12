@@ -82,7 +82,6 @@ namespace Udemy.OgrenciTakip.UI.Win.UserControls.Grid
                         Options = {UseTextOptions = true } 
                     }
                 }
-
             };
 
             view.Columns.AddRange(columns);
@@ -117,12 +116,11 @@ namespace Udemy.OgrenciTakip.UI.Win.UserControls.Grid
         #endregion
         public MyBandedGridView() { }
         public MyBandedGridView(GridControl ownerGrid) : base(ownerGrid){ }
-
-        //Birinci adımda yapılacaklar. Type RepositoryDateEdit ise ortala, null ise bir şey yapma
         protected override void OnColumnChangedCore(GridColumn column)
         {
             base.OnColumnChangedCore(column);
 
+            //Birinci adımda yapılacaklar. Type RepositoryDateEdit ise ortala, null ise bir şey yapma
             if (column.ColumnEdit == null) return;
             //column tipi RepositoryDateEdit ise aşağıdaki işlemleri yap
             if (column.ColumnEdit.GetType() == typeof(RepositoryItemDateEdit))
@@ -132,12 +130,11 @@ namespace Udemy.OgrenciTakip.UI.Win.UserControls.Grid
             }
 
         }
-
-        //
         protected override GridColumnCollection CreateColumnCollection()
         {
             return new MyGridColumnCollection(this);
         }
+
         //Eklediğimiz kolonların "AllowEdit" özelliği false olarak gelmiş olacak.
         private class MyGridColumnCollection : BandedGridColumnCollection
         {
@@ -151,6 +148,7 @@ namespace Udemy.OgrenciTakip.UI.Win.UserControls.Grid
             }
         }
     }
+
     public class MyBandedGridColumn : BandedGridColumn, IStatusBarKisayol
     {
         #region Properties

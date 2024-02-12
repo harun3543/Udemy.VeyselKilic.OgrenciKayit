@@ -46,7 +46,6 @@ namespace Udemy.OgrenciTakip.UI.Win.UserControls.Controls
             item.AppearanceItemCaption.ForeColor = Color.Maroon;
             return item;
         }
-        //
         public override LayoutGroup CreateLayoutGroup(LayoutGroup parent)
         {
             /*
