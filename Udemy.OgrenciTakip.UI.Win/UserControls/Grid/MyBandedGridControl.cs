@@ -28,8 +28,8 @@ namespace Udemy.OgrenciTakip.UI.Win.UserControls.Grid
             view.Appearance.BandPanel.TextOptions.HAlignment = HorzAlignment.Center;
             view.BandPanelRowHeight = 40;
 
-            view.Appearance.HeaderPanel.ForeColor = Color.Maroon;
-            view.Appearance.ViewCaption.ForeColor = Color.Maroon;
+            view.Appearance.HeaderPanel.ForeColor = Color.Maroon; //Kolon başlığı rengi
+            view.Appearance.ViewCaption.ForeColor = Color.Maroon; // Pencere text rengi
             view.Appearance.HeaderPanel.TextOptions.HAlignment = HorzAlignment.Center;
 
             view.Appearance.FooterPanel.ForeColor = Color.Maroon;
@@ -87,7 +87,6 @@ namespace Udemy.OgrenciTakip.UI.Win.UserControls.Grid
             view.Columns.AddRange(columns);
 
             return view;
-
         }
 
         protected override void RegisterAvailableViewsCore(InfoCollection collection)
@@ -102,9 +101,6 @@ namespace Udemy.OgrenciTakip.UI.Win.UserControls.Grid
         {
             public override string ViewName => "MyBandedGridView";
             public override BaseView CreateView(GridControl grid) => new MyBandedGridView(grid);
-            //{
-            //    return new MyBandedGridView(grid); 
-            //}
         }
     }
     public class MyBandedGridView : BandedGridView, IStatusBarKisayol
@@ -114,7 +110,7 @@ namespace Udemy.OgrenciTakip.UI.Win.UserControls.Grid
         public string StatusBarKisayolAciklama { get; set; }
         public string StatusBarAciklama { get; set; }
         #endregion
-        public MyBandedGridView() { }
+        public MyBandedGridView() { }  //designer.cs de hata çıkarmaması için eklendi
         public MyBandedGridView(GridControl ownerGrid) : base(ownerGrid){ }
         protected override void OnColumnChangedCore(GridColumn column)
         {

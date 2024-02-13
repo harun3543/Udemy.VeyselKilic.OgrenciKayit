@@ -292,6 +292,7 @@
     <None Include="Resources\first_16x16.png" />
     <None Include="Resources\prev_16x161.png" />
     <None Include="Resources\last_16x16.png" />
+    <None Include="Resources\comment_16x161.png" />
     <Content Include="Udemy.OgrenciTakip.UI.Win.Text.txt" />
   </ItemGroup>
   <ItemGroup>

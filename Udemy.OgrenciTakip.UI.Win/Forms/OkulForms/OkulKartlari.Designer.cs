@@ -202,7 +202,7 @@ namespace Udemy.OgrenciTakip.UI.Win.Forms.OkulForms
             this.Controls.Add(this.longNavigator1);
             this.IconOptions.ShowIcon = false;
             this.Name = "OkulKartlari";
-            this.Text = "x\"";
+            this.Text = "Okul Kartları";
             this.Controls.SetChildIndex(this.ribbonControl, 0);
             this.Controls.SetChildIndex(this.longNavigator1, 0);
             this.Controls.SetChildIndex(this.grid, 0);
