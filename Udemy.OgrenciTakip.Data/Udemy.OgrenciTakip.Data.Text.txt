@@ -1,6 +1,10 @@
-********************************************
-***********Class Açýklamalarý***************
+ï»¿********************************************
+***********Class AÃ§iklamalari***************
 ********************************************
 
-- Oluþturulacak context leri 
-- Migration iþlemlerini takip edeceðimiz kýsýmdýr.
+- Olusturulacak context leri 
+- Migration islemlerini takip edecegimiz kisimdir.
+
+----------------------------------------------------------
+Burada iki adet context'imiz olacak. Birisi Ã¶ÄŸrenci takip iÅŸlemleri iÃ§in yapÄ±lacak context
+ikincisi yÃ¶netim iÅŸlemleri iÃ§in bir context olacak

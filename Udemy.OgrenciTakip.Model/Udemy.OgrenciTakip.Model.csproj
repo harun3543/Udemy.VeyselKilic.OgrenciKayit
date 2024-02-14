@@ -52,5 +52,8 @@
   <ItemGroup>
     <Content Include="Udemy.OgrenciTakip.Model.Text.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Udemy.OgrenciTakip.Model.DOCX" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
