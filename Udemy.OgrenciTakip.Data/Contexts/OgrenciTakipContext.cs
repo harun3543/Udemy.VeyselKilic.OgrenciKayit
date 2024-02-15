@@ -1,6 +1,7 @@
 ﻿using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using Udemy.OgrenciTakip.Data.Contexts.OgrenciTakipMigration;
+using Udemy.OgrenciTakip.Model.Entities;
 
 namespace Udemy.OgrenciTakip.Data.Contexts
 {
@@ -37,7 +38,9 @@ namespace Udemy.OgrenciTakip.Data.Contexts
         {
             /*
              * Normalde table verileri database'e gönderilirken ismi çoğul hale getirip database'e gönderir.
+             * Örneğin "Okul" entity'si database'e gönderilirken "Okuls" olarak tablo oluşturulur 
              * Aşağıda bu işlemi iptal etmiş oluyoruz.
+             * bu işlemi ayrı bir yerde oluşturacağız.
              */
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
 
@@ -45,8 +48,22 @@ namespace Udemy.OgrenciTakip.Data.Contexts
              * Normalde örneğin "İl" tablosundan İstanbul silindiğinde İstanbul'a bağlı 
              * ilçeler de "İlçe" tablosundan silinir. Bunu engellemek için aşağıdaki kodu
              * eklemeliyiz.
+             * "OneToManyCascadeDeleteConvention" Bire çok ilişkili olan tablo demek
              */
             modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
+
+            /*
+             * "ManyToManyCascadeDeleteConvention" çoka çok ilişkili olan tablolar için yukarıdaki 
+             * işlemin aynısı
+             */
+            modelBuilder.Conventions.Remove<ManyToManyCascadeDeleteConvention>();
         }
+
+        /*
+         * Şimdi aşağıda kullanacağımız enetity'leri ekleyeceğiz
+         */
+        public DbSet<Il> Il { get; set; }
+        public DbSet<Ilce> Ilce { get; set; }
+        public DbSet<Okul> Okul { get; set; }
     }
 }

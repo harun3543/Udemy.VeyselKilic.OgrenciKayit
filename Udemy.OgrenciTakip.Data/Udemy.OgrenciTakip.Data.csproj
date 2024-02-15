@@ -58,7 +58,12 @@
   <ItemGroup>
     <Content Include="Udemy.OgrenciTakip.Data.Text.txt" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Udemy.OgrenciTakip.Model\Udemy.OgrenciTakip.Model.csproj">
+      <Project>{D4BFA9DF-EE10-4561-9C2F-93EBE7550CCD}</Project>
+      <Name>Udemy.OgrenciTakip.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>

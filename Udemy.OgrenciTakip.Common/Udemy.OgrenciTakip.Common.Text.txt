@@ -1,9 +1,10 @@
-********************************************
-********Class Açıklamaları******************
+ï»¿********************************************
+********Class AÃ§Ã½klamalarÃ½******************
 ********************************************
 
-Genel olarak kullanacağımız metodları buraya yazacağız. Bu classtaki methodları birden çok katmanda 
-kullanacağız.
+Genel olarak kullanacaÃ°Ã½mÃ½z metodlarÃ½ buraya yazacaÃ°Ã½z. Bu classtaki methodlarÃ½ birden Ã§ok katmanda 
+kullanacaÃ°Ã½z.
 
-1- Genel kullanılacak bazı fonksiyonlar olacak
-2- Enum tanımlarımız olacak
+1- Genel kullanÃ½lacak bazÃ½ fonksiyonlar olacak
+2- Enum tanÃ½mlarÃ½mÃ½z olacak
+3- Mesaj class'Ä±

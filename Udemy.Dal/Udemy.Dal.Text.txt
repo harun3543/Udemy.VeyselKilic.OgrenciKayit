@@ -1,6 +1,11 @@
-********************************************
-***********Class Açıklamaları***************
+ï»¿********************************************
+***********Class Aciklamalari***************
 ********************************************
 
--Bu class'ta data katmanına bağlanıp verileri çekme ve verileri yazma işlemleri 
-yapılacaktır.
+-Bu class'ta amaÃ§ 65 adet table iÃ§in ayrÄ± ayrÄ± sorgu class'i oluÅŸturmak yerine 
+tek bir class ile entity'leri generic bir yapÄ±da bu class'a verip iÅŸlem yapmak olacak.
+
+------------------------------------------------------------------
+- Bu katmanda iki pattern kullanacaÄŸÄ±z
+1. Repository pattern
+2. Unti of Work pattern
