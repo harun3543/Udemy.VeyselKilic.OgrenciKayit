@@ -307,5 +307,19 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Udemy.Dal\Udemy.Dal.csproj">
+      <Project>{D759C90D-FC31-4E62-99C4-04C65B4B58F6}</Project>
+      <Name>Udemy.Dal</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Udemy.OgrenciTakip.Data\Udemy.OgrenciTakip.Data.csproj">
+      <Project>{68A0029B-80B2-4140-BEC5-6B6A94A69DD1}</Project>
+      <Name>Udemy.OgrenciTakip.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Udemy.OgrenciTakip.Model\Udemy.OgrenciTakip.Model.csproj">
+      <Project>{D4BFA9DF-EE10-4561-9C2F-93EBE7550CCD}</Project>
+      <Name>Udemy.OgrenciTakip.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

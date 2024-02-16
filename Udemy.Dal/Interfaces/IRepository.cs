@@ -6,7 +6,8 @@ using System.Linq.Expressions;
 namespace Udemy.Dal.Interfaces
 {
 
-    /*
+    /* Database işlemleri için kullanacağız.
+     * 
      * IDisposable: bu interface'i implmenete eden class'lar "Disposable" işlemini uygulamak zorundadır.
      * 
      * Disposable işlemi; bir class'ın işlemi bittikten sonra hafızadan atılma işlemidir. Yani bu interface'yi

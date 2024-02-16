@@ -1,5 +1,6 @@
 ﻿using Udemy.OgrenciTakip.Model.Entities.Base;
 
+
 namespace Udemy.OgrenciTakip.Model.Entities
 {
     /*

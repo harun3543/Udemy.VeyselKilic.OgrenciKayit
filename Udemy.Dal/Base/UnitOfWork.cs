@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using Udemy.Dal.Interfaces;
 using Udemy.OgrenciTakip.Common.Message;
 
+
 namespace Udemy.Dal.Base
 {
     public class UnitOfWork<T> : IUnitOfWork<T> where T : class
@@ -20,6 +21,9 @@ namespace Udemy.Dal.Base
         }
 
         // Unit of work'e verilen context ile yeni bir repository instance oluşturduk.
+        // Buradan Repository içerisindeki methodlara ulaşabileceğiz. 
+        // Repository katmanının başka bir yerde instance'ını oluşturmamak ve sadece buradan ulaşmak için
+        // yapıldı
         public IRepository<T> Rep => new Repository<T>(_context);
 
         /*

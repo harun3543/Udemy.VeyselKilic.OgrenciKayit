@@ -1,6 +1,9 @@
-********************************************
-***********Class Açıklamaları***************
+ï»¿********************************************
+***********Class AÃ§Ã½klamalarÃ½***************
 ********************************************
 
--Çekilen dataları işleyeceğimiz, gerekli işlemler yapıldıktan sonra 
-DAL katmanı ile dataları yazacağımız class'tır.
+-Ã‡ekilen datalarÃ½ iÃ¾leyeceÃ°imiz, gerekli iÃ¾lemler yapÃ½ldÃ½ktan sonra 
+DAL katmanÃ½ ile datalarÃ½ yazacaÃ°Ã½mÃ½z class'tÃ½r.
+
+Her katman icin ayrÄ± bir klasor olusturup, kod tekrarÄ±nÄ± engellemek icin
+Base class olusturulacak.

@@ -68,6 +68,10 @@
       <Project>{01a52f7e-5850-4c98-9588-d9fe0db37fdb}</Project>
       <Name>Udemy.OgrenciTakip.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Udemy.OgrenciTakip.Model\Udemy.OgrenciTakip.Model.csproj">
+      <Project>{D4BFA9DF-EE10-4561-9C2F-93EBE7550CCD}</Project>
+      <Name>Udemy.OgrenciTakip.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
