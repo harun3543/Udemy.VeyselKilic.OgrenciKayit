@@ -30,7 +30,7 @@ namespace Udemy.OgrenciTakip.Bll.Functions
         {
             return (TContext)Activator.CreateInstance(typeof(TContext), GetConnectionString());
         }
-        public static void CreateUnitOfWork<T,TContext>(ref IUnitOfWork<T> uow) where T:class, IBaseEntity where TContext:DbContext
+        public static void CreateUnitOfWork<T, TContext>(ref IUnitOfWork<T> uow) where T : class, IBaseEntity where TContext : DbContext
         {
             // ? null değilse demek
             // daha önce oluşturulmuş unit of work ü dispose yani çöpe gönderiyoruz.

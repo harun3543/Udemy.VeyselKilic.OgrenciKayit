@@ -7,3 +7,15 @@ DAL katmaný ile datalarý yazacaðýmýz class'týr.
 
 Her katman icin ayrı bir klasor olusturup, kod tekrarını engellemek icin
 Base class olusturulacak.
+---------------------------------------------------
+BaseBll.cs
+	Bll katmanında oluşturulacak class'larda aynı işlmleri yapmamak için oluşutruldu.
+
+---------------------------------------------------
+Convert class: 
+	Data transfer object'leri entity'e dönüştüren methdolar.
+
+
+----------------------------------------------------
+GeneralFunctions.cs
+	Yeni bir UnitOfWork create etmek için kullanıldı

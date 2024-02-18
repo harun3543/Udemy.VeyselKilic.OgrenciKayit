@@ -33,7 +33,9 @@ namespace Udemy.OgrenciTakip.Bll.Functions
             if (source == null) return default(TTarget);
             var hedef = Activator.CreateInstance<TTarget>();   // TTarget'dan bir tane instance ürettik.
             var kaynakProp = source.GetType().GetProperties(); // kaynak entity'nin property'lerine eriştik.
-            var hedefProp = typeof(TTarget).GetProperties();   // hedef entity'nin property'lerine ulaştık.
+
+            // hedef entity'nin property'lerine ulaştık. generic yapıda olduğu için typeof kullanarak yaptık.
+            var hedefProp = typeof(TTarget).GetProperties();   
             
             foreach (var kp in kaynakProp)
             {

@@ -20,7 +20,7 @@ namespace Udemy.OgrenciTakip.Bll.Base
      */
     public class BaseBll<T, TContext> : IBaseBll where T : BaseEntity where TContext : DbContext
     {
-        private readonly Control _ctrl;
+        private readonly Control _ctrl;  // form controlu
         private IUnitOfWork<T> _uow; // repository'e unit of work üzerinden ulaşacağız.
 
         // sadece bu class'ı implemente eden class'lar ulaşabilmesi için protected yapıldı
@@ -32,7 +32,7 @@ namespace Udemy.OgrenciTakip.Bll.Base
         }
 
         /*
-         * 
+         * Sadece bir tane veri cekme
          */
         protected TResult BaseSingle<TResult>(Expression<Func<T, bool>> filter, Expression<Func<T,TResult>> selector)
         {
