@@ -57,6 +57,7 @@
     <Compile Include="Base\Interfaces\IBaseBll.cs" />
     <Compile Include="Functions\Converts.cs" />
     <Compile Include="Functions\GeneralFuntions.cs" />
+    <Compile Include="General\OkulBll.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -66,6 +67,10 @@
     <ProjectReference Include="..\Udemy.Dal\Udemy.Dal.csproj">
       <Project>{D759C90D-FC31-4E62-99C4-04C65B4B58F6}</Project>
       <Name>Udemy.Dal</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Udemy.OgrenciTakip.Common\Udemy.OgrenciTakip.Common.csproj">
+      <Project>{01A52F7E-5850-4C98-9588-D9FE0DB37FDB}</Project>
+      <Name>Udemy.OgrenciTakip.Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\Udemy.OgrenciTakip.Data\Udemy.OgrenciTakip.Data.csproj">
       <Project>{68a0029b-80b2-4140-bec5-6b6a94a69dd1}</Project>
