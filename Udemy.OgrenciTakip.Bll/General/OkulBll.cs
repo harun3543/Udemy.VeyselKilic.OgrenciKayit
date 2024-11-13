@@ -8,15 +8,16 @@ using Udemy.OgrenciTakip.Data.Contexts;
 using Udemy.OgrenciTakip.Model.Dto;
 using Udemy.OgrenciTakip.Model.Entities;
 using Udemy.OgrenciTakip.Model.Entities.Base;
+using System.Linq;
 
 namespace Udemy.OgrenciTakip.Bll.General
 {
     public class OkulBll : BaseBll<Okul, OgrenciTakipContext>
     {
         // BaseBll class'ında iki adet constructor oldugu için  burada da iki adet oluşturduk
-        protected OkulBll() { }
+        public OkulBll() { }
 
-        protected OkulBll(Control ctrl) : base(ctrl) { }
+        public OkulBll(Control ctrl) : base(ctrl) { }
 
         // Aşağıda kullanmak için data transfer objeleri oluşturacağız ve bunlarda Model katmanında olacak.
         public BaseEntity Single(Expression<Func<Okul, bool>> filter)
@@ -45,7 +46,10 @@ namespace Udemy.OgrenciTakip.Bll.General
                 IlAdi = x.Il.IlAdi,
                 IlceAdi = x.Ilce.IlceAdi,
                 Aciklama = x.Aciklama
-            });
+            }).OrderBy(x => x.Kod).ToList();  // database yansıması için IQueryable'ı List,e çevirdik
+            // Tolist işlemi; henüz veriler çekilmeden database de sıralama yap ve dataları listele 
+            // demiş olduk. Base class da yapsaydık sıralamadan verileri çekip ekstra burada sıralama 
+            // işlemi yapacaktık.
         }
 
         public bool Insert(BaseEntity entity)
