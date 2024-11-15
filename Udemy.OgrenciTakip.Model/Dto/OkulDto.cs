@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,10 +19,10 @@ namespace Udemy.OgrenciTakip.Model.Dto
      * entity si içinde yok. İşte ayrıca gelecek olan proprty leri saklamak için data transfer objelerini kullanırız.
      * 
      * Database de bir data create ederken sadece entity de olan verilerin create edilmesini istiyoruz yani buradaki
-     * IlAdi ve IlceAdi nin olmamasını istiyoruz. Bu yüzden aşağıya bir attribute yazılır. 
+     * IlAdi ve IlceAdi nin olmamasını istiyoruz. Bu yüzden aşağıya bir "NotMapped" isimli bir attribute yazılır. 
      */
 
-    // attribute
+    [NotMapped]
     public class OkulS : Okul // OkulS deki "S" single ifade eder.
     {
         public string IlAdi { get; set; }

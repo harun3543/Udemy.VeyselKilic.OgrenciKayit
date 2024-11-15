@@ -1,4 +1,6 @@
-﻿using Udemy.OgrenciTakip.Model.Entities.Base;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using Udemy.OgrenciTakip.Model.Entities.Base;
 
 namespace Udemy.OgrenciTakip.Model.Entities
 {
@@ -9,8 +11,20 @@ namespace Udemy.OgrenciTakip.Model.Entities
      */
     public class Ilce : BaseEntityDurum
     {
+        // IsUnique false yapmamızın nedeni aynı ilçe kodu ile başka illerde olabilir.
+
+        [Index("IX_Kod", IsUnique = false)]
+        public override string Kod { get; set; }
+
+
+        [Required,StringLength(50)]
         public string IlceAdi { get; set; }
+
+
         public long IlId { get; set; }  // bu property "Il" tablosundaki id alanı tipinde olmalıdır.
+
+
+        [StringLength(500)]
         public string Aciklama { get; set; }
 
         /*

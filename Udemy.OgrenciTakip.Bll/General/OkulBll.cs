@@ -47,7 +47,8 @@ namespace Udemy.OgrenciTakip.Bll.General
                 IlceAdi = x.Ilce.IlceAdi,
                 Aciklama = x.Aciklama
             }).OrderBy(x => x.Kod).ToList();  // database yansıması için IQueryable'ı List,e çevirdik
-            // Tolist işlemi; henüz veriler çekilmeden database de sıralama yap ve dataları listele 
+            // Tolist işlemi; entity yapılarımızı database'e yansıtacak
+            // henüz veriler çekilmeden database de sıralama yap ve dataları listele 
             // demiş olduk. Base class da yapsaydık sıralamadan verileri çekip ekstra burada sıralama 
             // işlemi yapacaktık.
         }
