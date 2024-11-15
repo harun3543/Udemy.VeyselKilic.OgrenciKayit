@@ -1,7 +1,7 @@
 ﻿
 namespace Udemy.OgrenciTakip.UI.Win.Forms.BaseForms
 {
-    partial class BaseKartlarForm
+    partial class z
     {
         /// <summary>
         /// Required designer variable.
@@ -55,7 +55,7 @@ namespace Udemy.OgrenciTakip.UI.Win.Forms.BaseForms
             DevExpress.Utils.ToolTipItem toolTipItem9 = new DevExpress.Utils.ToolTipItem();
             DevExpress.Utils.ToolTipSeparatorItem toolTipSeparatorItem5 = new DevExpress.Utils.ToolTipSeparatorItem();
             DevExpress.Utils.ToolTipItem toolTipItem10 = new DevExpress.Utils.ToolTipItem();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BaseKartlarForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(z));
             DevExpress.Utils.SuperToolTip superToolTip6 = new DevExpress.Utils.SuperToolTip();
             DevExpress.Utils.ToolTipTitleItem toolTipTitleItem6 = new DevExpress.Utils.ToolTipTitleItem();
             DevExpress.Utils.ToolTipItem toolTipItem11 = new DevExpress.Utils.ToolTipItem();
@@ -95,8 +95,6 @@ namespace Udemy.OgrenciTakip.UI.Win.Forms.BaseForms
             this.btnFiltrele = new DevExpress.XtraBars.BarButtonItem();
             this.btnKolonlar = new DevExpress.XtraBars.BarButtonItem();
             this.btnYazdir = new DevExpress.XtraBars.BarButtonItem();
-            this.btnGonder = new DevExpress.XtraBars.BarButtonItem();
-            this.galleryDropDown1 = new DevExpress.XtraBars.Ribbon.GalleryDropDown(this.components);
             this.btnCikis = new DevExpress.XtraBars.BarButtonItem();
             this.barInsert = new DevExpress.XtraBars.BarStaticItem();
             this.barInsertAciklama = new DevExpress.XtraBars.BarStaticItem();
@@ -119,9 +117,18 @@ namespace Udemy.OgrenciTakip.UI.Win.Forms.BaseForms
             this.barCikis = new DevExpress.XtraBars.BarStaticItem();
             this.barCikisAciklama = new DevExpress.XtraBars.BarStaticItem();
             this.btnAktifPasifKartlar = new DevExpress.XtraBars.BarButtonItem();
+            this.btnGonder = new DevExpress.XtraBars.BarSubItem();
+            this.btnExcelDosyalari = new DevExpress.XtraBars.BarSubItem();
+            this.btnStandartExcelDosyasi = new DevExpress.XtraBars.BarButtonItem();
+            this.btnFormatliExcelDosyasi = new DevExpress.XtraBars.BarButtonItem();
+            this.btnFormatsizExcelDosyasi = new DevExpress.XtraBars.BarButtonItem();
+            this.btnWordDosyasi = new DevExpress.XtraBars.BarButtonItem();
+            this.btnPdfDosyasi = new DevExpress.XtraBars.BarButtonItem();
+            this.btnTxtDosyasi = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
+            this.galleryDropDown1 = new DevExpress.XtraBars.Ribbon.GalleryDropDown(this.components);
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.galleryDropDown1)).BeginInit();
@@ -143,7 +150,6 @@ namespace Udemy.OgrenciTakip.UI.Win.Forms.BaseForms
             this.btnFiltrele,
             this.btnKolonlar,
             this.btnYazdir,
-            this.btnGonder,
             this.btnCikis,
             this.barInsert,
             this.barInsertAciklama,
@@ -165,9 +171,17 @@ namespace Udemy.OgrenciTakip.UI.Win.Forms.BaseForms
             this.barStaticItem3,
             this.barCikis,
             this.barCikisAciklama,
-            this.btnAktifPasifKartlar});
+            this.btnAktifPasifKartlar,
+            this.btnGonder,
+            this.btnExcelDosyalari,
+            this.btnStandartExcelDosyasi,
+            this.btnFormatliExcelDosyasi,
+            this.btnFormatsizExcelDosyasi,
+            this.btnWordDosyasi,
+            this.btnPdfDosyasi,
+            this.btnTxtDosyasi});
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl.MaxItemId = 32;
+            this.ribbonControl.MaxItemId = 41;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -179,7 +193,7 @@ namespace Udemy.OgrenciTakip.UI.Win.Forms.BaseForms
             this.ribbonControl.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide;
             this.ribbonControl.ShowQatLocationSelector = false;
             this.ribbonControl.ShowToolbarCustomizeItem = false;
-            this.ribbonControl.Size = new System.Drawing.Size(1133, 102);
+            this.ribbonControl.Size = new System.Drawing.Size(1133, 124);
             this.ribbonControl.StatusBar = this.ribbonStatusBar1;
             this.ribbonControl.Toolbar.ShowCustomizeItem = false;
             this.ribbonControl.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
@@ -336,33 +350,6 @@ namespace Udemy.OgrenciTakip.UI.Win.Forms.BaseForms
             superToolTip8.Items.Add(toolTipItem16);
             this.btnYazdir.SuperTip = superToolTip8;
             // 
-            // btnGonder
-            // 
-            this.btnGonder.ActAsDropDown = true;
-            this.btnGonder.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
-            this.btnGonder.Caption = "Gonder";
-            this.btnGonder.DropDownControl = this.galleryDropDown1;
-            this.btnGonder.Id = 9;
-            this.btnGonder.ImageOptions.Image = global::Udemy.OgrenciTakip.UI.Win.Properties.Resources.export_16x161;
-            this.btnGonder.ImageOptions.LargeImage = global::Udemy.OgrenciTakip.UI.Win.Properties.Resources.export_32x321;
-            this.btnGonder.ItemShortcut = new DevExpress.XtraBars.BarShortcut(System.Windows.Forms.Keys.F12);
-            this.btnGonder.Name = "btnGonder";
-            toolTipTitleItem9.ImageOptions.Image = global::Udemy.OgrenciTakip.UI.Win.Properties.Resources.comment_16x16;
-            toolTipTitleItem9.Text = "(F12)";
-            toolTipItem17.Text = "Dosyaya Gönder";
-            toolTipItem18.ImageOptions.Image = global::Udemy.OgrenciTakip.UI.Win.Properties.Resources.suggestion_16x16;
-            toolTipItem18.Text = "İlgili Tabloyu Belirlediğiniz Dosya Biçimine Göre Dosyaya Aktarıp, Dosyayı Açar.";
-            superToolTip9.Items.Add(toolTipTitleItem9);
-            superToolTip9.Items.Add(toolTipItem17);
-            superToolTip9.Items.Add(toolTipSeparatorItem9);
-            superToolTip9.Items.Add(toolTipItem18);
-            this.btnGonder.SuperTip = superToolTip9;
-            // 
-            // galleryDropDown1
-            // 
-            this.galleryDropDown1.Name = "galleryDropDown1";
-            this.galleryDropDown1.Ribbon = this.ribbonControl;
-            // 
             // btnCikis
             // 
             this.btnCikis.Caption = "Çıkış";
@@ -371,16 +358,16 @@ namespace Udemy.OgrenciTakip.UI.Win.Forms.BaseForms
             this.btnCikis.ImageOptions.LargeImage = global::Udemy.OgrenciTakip.UI.Win.Properties.Resources.close_32x32;
             this.btnCikis.Name = "btnCikis";
             this.btnCikis.ShortcutKeyDisplayString = "Esc";
-            toolTipTitleItem10.ImageOptions.Image = global::Udemy.OgrenciTakip.UI.Win.Properties.Resources.comment_16x16;
-            toolTipTitleItem10.Text = "(Esc)";
-            toolTipItem19.Text = "Çıkış";
-            toolTipItem20.ImageOptions.Image = global::Udemy.OgrenciTakip.UI.Win.Properties.Resources.suggestion_16x16;
-            toolTipItem20.Text = "Form Kapatılarak Çıkılır.";
-            superToolTip10.Items.Add(toolTipTitleItem10);
-            superToolTip10.Items.Add(toolTipItem19);
-            superToolTip10.Items.Add(toolTipSeparatorItem10);
-            superToolTip10.Items.Add(toolTipItem20);
-            this.btnCikis.SuperTip = superToolTip10;
+            toolTipTitleItem9.ImageOptions.Image = global::Udemy.OgrenciTakip.UI.Win.Properties.Resources.comment_16x16;
+            toolTipTitleItem9.Text = "(Esc)";
+            toolTipItem17.Text = "Çıkış";
+            toolTipItem18.ImageOptions.Image = global::Udemy.OgrenciTakip.UI.Win.Properties.Resources.suggestion_16x16;
+            toolTipItem18.Text = "Form Kapatılarak Çıkılır.";
+            superToolTip9.Items.Add(toolTipTitleItem9);
+            superToolTip9.Items.Add(toolTipItem17);
+            superToolTip9.Items.Add(toolTipSeparatorItem9);
+            superToolTip9.Items.Add(toolTipItem18);
+            this.btnCikis.SuperTip = superToolTip9;
             // 
             // barInsert
             // 
@@ -564,16 +551,99 @@ namespace Udemy.OgrenciTakip.UI.Win.Forms.BaseForms
             this.btnAktifPasifKartlar.ItemAppearance.Pressed.Options.UseFont = true;
             this.btnAktifPasifKartlar.ItemAppearance.Pressed.Options.UseForeColor = true;
             this.btnAktifPasifKartlar.Name = "btnAktifPasifKartlar";
+            toolTipTitleItem10.ImageOptions.Image = global::Udemy.OgrenciTakip.UI.Win.Properties.Resources.comment_16x16;
+            toolTipTitleItem10.Text = "( Ctrl+L )";
+            toolTipItem19.Text = "Aktif Veya Pasif Kartları Listele";
+            toolTipItem20.ImageOptions.Image = global::Udemy.OgrenciTakip.UI.Win.Properties.Resources.suggestion_16x16;
+            toolTipItem20.Text = "Aktif Veya Pasif Kartları Listeler";
+            superToolTip10.Items.Add(toolTipTitleItem10);
+            superToolTip10.Items.Add(toolTipItem19);
+            superToolTip10.Items.Add(toolTipSeparatorItem10);
+            superToolTip10.Items.Add(toolTipItem20);
+            this.btnAktifPasifKartlar.SuperTip = superToolTip10;
+            // 
+            // btnGonder
+            // 
+            this.btnGonder.Caption = "Gönder";
+            this.btnGonder.Id = 33;
+            this.btnGonder.ImageOptions.Image = global::Udemy.OgrenciTakip.UI.Win.Properties.Resources.export_16x161;
+            this.btnGonder.ImageOptions.LargeImage = global::Udemy.OgrenciTakip.UI.Win.Properties.Resources.export_32x321;
+            this.btnGonder.ItemShortcut = new DevExpress.XtraBars.BarShortcut(System.Windows.Forms.Keys.F12);
+            this.btnGonder.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnExcelDosyalari),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnWordDosyasi),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnPdfDosyasi),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnTxtDosyasi)});
+            this.btnGonder.Name = "btnGonder";
             toolTipTitleItem11.ImageOptions.Image = global::Udemy.OgrenciTakip.UI.Win.Properties.Resources.comment_16x16;
-            toolTipTitleItem11.Text = "( Ctrl+L )";
-            toolTipItem21.Text = "Aktif Veya Pasif Kartları Listele";
+            toolTipTitleItem11.Text = "(F12)";
+            toolTipItem21.Text = "Dosyaya Gönder";
             toolTipItem22.ImageOptions.Image = global::Udemy.OgrenciTakip.UI.Win.Properties.Resources.suggestion_16x16;
-            toolTipItem22.Text = "Aktif Veya Pasif Kartları Listeler";
+            toolTipItem22.Text = "İlgili Tabloyu Belirlediğiniz Dosya Biçimine Göre Dosyaya Aktarıp, Dosyayı Açar.";
             superToolTip11.Items.Add(toolTipTitleItem11);
             superToolTip11.Items.Add(toolTipItem21);
             superToolTip11.Items.Add(toolTipSeparatorItem11);
             superToolTip11.Items.Add(toolTipItem22);
-            this.btnAktifPasifKartlar.SuperTip = superToolTip11;
+            this.btnGonder.SuperTip = superToolTip11;
+            // 
+            // btnExcelDosyalari
+            // 
+            this.btnExcelDosyalari.Caption = "Excel Dosyaları";
+            this.btnExcelDosyalari.Id = 34;
+            this.btnExcelDosyalari.ImageOptions.Image = global::Udemy.OgrenciTakip.UI.Win.Properties.Resources.exporttoxlsx_32x32;
+            this.btnExcelDosyalari.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnStandartExcelDosyasi),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnFormatliExcelDosyasi),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnFormatsizExcelDosyasi)});
+            this.btnExcelDosyalari.Name = "btnExcelDosyalari";
+            // 
+            // btnStandartExcelDosyasi
+            // 
+            this.btnStandartExcelDosyasi.Caption = "Excel Dosyası (Standart)";
+            this.btnStandartExcelDosyasi.Id = 35;
+            this.btnStandartExcelDosyasi.ImageOptions.Image = global::Udemy.OgrenciTakip.UI.Win.Properties.Resources.exporttoxlsx_32x32;
+            this.btnStandartExcelDosyasi.ItemShortcut = new DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.G), (System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S));
+            this.btnStandartExcelDosyasi.Name = "btnStandartExcelDosyasi";
+            // 
+            // btnFormatliExcelDosyasi
+            // 
+            this.btnFormatliExcelDosyasi.Caption = "Excel Dosyası (Formatlı)";
+            this.btnFormatliExcelDosyasi.Id = 36;
+            this.btnFormatliExcelDosyasi.ImageOptions.Image = global::Udemy.OgrenciTakip.UI.Win.Properties.Resources.exporttoxlsx_32x32;
+            this.btnFormatliExcelDosyasi.ItemShortcut = new DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.G), (System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F));
+            this.btnFormatliExcelDosyasi.Name = "btnFormatliExcelDosyasi";
+            // 
+            // btnFormatsizExcelDosyasi
+            // 
+            this.btnFormatsizExcelDosyasi.Caption = "Excel Dosyasi (Formatsız)";
+            this.btnFormatsizExcelDosyasi.Id = 37;
+            this.btnFormatsizExcelDosyasi.ImageOptions.Image = global::Udemy.OgrenciTakip.UI.Win.Properties.Resources.exporttoxlsx_32x32;
+            this.btnFormatsizExcelDosyasi.ItemShortcut = new DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.G), (System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z));
+            this.btnFormatsizExcelDosyasi.Name = "btnFormatsizExcelDosyasi";
+            // 
+            // btnWordDosyasi
+            // 
+            this.btnWordDosyasi.Caption = "Word Dosyası";
+            this.btnWordDosyasi.Id = 38;
+            this.btnWordDosyasi.ImageOptions.Image = global::Udemy.OgrenciTakip.UI.Win.Properties.Resources.exporttodocx_32x32;
+            this.btnWordDosyasi.ItemShortcut = new DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.W));
+            this.btnWordDosyasi.Name = "btnWordDosyasi";
+            // 
+            // btnPdfDosyasi
+            // 
+            this.btnPdfDosyasi.Caption = "Pdf Dosyası";
+            this.btnPdfDosyasi.Id = 39;
+            this.btnPdfDosyasi.ImageOptions.Image = global::Udemy.OgrenciTakip.UI.Win.Properties.Resources.exporttopdf_32x322;
+            this.btnPdfDosyasi.ItemShortcut = new DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P));
+            this.btnPdfDosyasi.Name = "btnPdfDosyasi";
+            // 
+            // btnTxtDosyasi
+            // 
+            this.btnTxtDosyasi.Caption = "Txt Dosyası";
+            this.btnTxtDosyasi.Id = 40;
+            this.btnTxtDosyasi.ImageOptions.Image = global::Udemy.OgrenciTakip.UI.Win.Properties.Resources.exporttotxt_32x32;
+            this.btnTxtDosyasi.ItemShortcut = new DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.T));
+            this.btnTxtDosyasi.Name = "btnTxtDosyasi";
             // 
             // ribbonPage1
             // 
@@ -625,12 +695,17 @@ namespace Udemy.OgrenciTakip.UI.Win.Forms.BaseForms
             this.ribbonStatusBar1.Ribbon = this.ribbonControl;
             this.ribbonStatusBar1.Size = new System.Drawing.Size(1133, 31);
             // 
+            // galleryDropDown1
+            // 
+            this.galleryDropDown1.Name = "galleryDropDown1";
+            this.galleryDropDown1.Ribbon = this.ribbonControl;
+            // 
             // ribbonPage2
             // 
             this.ribbonPage2.Name = "ribbonPage2";
             this.ribbonPage2.Text = "ribbonPage2";
             // 
-            // BaseKartlarForm
+            // z
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -639,7 +714,7 @@ namespace Udemy.OgrenciTakip.UI.Win.Forms.BaseForms
             this.Controls.Add(this.ribbonControl);
             this.IconOptions.ShowIcon = false;
             this.MinimizeBox = false;
-            this.Name = "BaseKartlarForm";
+            this.Name = "z";
             this.Ribbon = this.ribbonControl;
             this.ShowInTaskbar = false;
             this.StatusBar = this.ribbonStatusBar1;
@@ -663,7 +738,6 @@ namespace Udemy.OgrenciTakip.UI.Win.Forms.BaseForms
         private DevExpress.XtraBars.BarButtonItem btnFiltrele;
         private DevExpress.XtraBars.BarButtonItem btnKolonlar;
         private DevExpress.XtraBars.BarButtonItem btnYazdir;
-        private DevExpress.XtraBars.BarButtonItem btnGonder;
         private DevExpress.XtraBars.BarButtonItem btnCikis;
         private DevExpress.XtraBars.Ribbon.GalleryDropDown galleryDropDown1;
         protected DevExpress.XtraBars.Ribbon.RibbonControl ribbonControl;
@@ -688,5 +762,13 @@ namespace Udemy.OgrenciTakip.UI.Win.Forms.BaseForms
         private DevExpress.XtraBars.BarStaticItem barCikis;
         private DevExpress.XtraBars.BarStaticItem barCikisAciklama;
         private DevExpress.XtraBars.BarButtonItem btnAktifPasifKartlar;
+        private DevExpress.XtraBars.BarSubItem btnGonder;
+        private DevExpress.XtraBars.BarSubItem btnExcelDosyalari;
+        private DevExpress.XtraBars.BarButtonItem btnStandartExcelDosyasi;
+        private DevExpress.XtraBars.BarButtonItem btnFormatliExcelDosyasi;
+        private DevExpress.XtraBars.BarButtonItem btnFormatsizExcelDosyasi;
+        private DevExpress.XtraBars.BarButtonItem btnWordDosyasi;
+        private DevExpress.XtraBars.BarButtonItem btnPdfDosyasi;
+        private DevExpress.XtraBars.BarButtonItem btnTxtDosyasi;
     }
 }

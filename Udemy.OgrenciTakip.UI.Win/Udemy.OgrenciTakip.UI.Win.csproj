@@ -313,6 +313,13 @@
     <None Include="Resources\prev_16x161.png" />
     <None Include="Resources\last_16x16.png" />
     <None Include="Resources\comment_16x161.png" />
+    <None Include="Resources\exporttoxlsx_32x32.png" />
+    <None Include="Resources\exporttodocx_32x32.png" />
+    <None Include="Resources\exporttopdf_32x32.png" />
+    <None Include="Resources\exporttopdf_32x321.png" />
+    <None Include="Resources\exporttopdf_16x16.png" />
+    <None Include="Resources\exporttopdf_32x322.png" />
+    <None Include="Resources\exporttotxt_32x32.png" />
     <Content Include="Udemy.OgrenciTakip.UI.Win.Text.txt" />
   </ItemGroup>
   <ItemGroup>
