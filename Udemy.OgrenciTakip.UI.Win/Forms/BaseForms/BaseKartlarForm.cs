@@ -35,7 +35,8 @@ namespace Udemy.OgrenciTakip.UI.Win.Forms.BaseForms
         {
             if(e.Item == btnGonder)
             {
-                var list = e.Item.Links;
+                var list = e.Item.Links[0];
+                list.Focus();
 
             }
         }

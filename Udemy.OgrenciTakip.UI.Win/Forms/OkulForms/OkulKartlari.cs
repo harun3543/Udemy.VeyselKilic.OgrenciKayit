@@ -11,7 +11,6 @@ namespace Udemy.OgrenciTakip.UI.Win.Forms.OkulForms
             InitializeComponent();
             
             OkulBll okulBll = new OkulBll();
-
             grid.DataSource = okulBll.List(null); 
         }
     }
