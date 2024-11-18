@@ -31,7 +31,7 @@ namespace Udemy.OgrenciTakip.UI.Win.GeneralForms
             {
                 switch (item)
                 {
-                    case BarSubItem btn:
+                    case BarItem btn:
                         btn.ItemClick += Butonlar_ItemClick;
                         break;
                 }

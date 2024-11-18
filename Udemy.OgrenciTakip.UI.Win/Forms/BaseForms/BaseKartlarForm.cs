@@ -4,9 +4,9 @@ using DevExpress.XtraBars;
 
 namespace Udemy.OgrenciTakip.UI.Win.Forms.BaseForms
 {
-    public partial class z : DevExpress.XtraBars.Ribbon.RibbonForm
+    public partial class BaseKartlarForm : DevExpress.XtraBars.Ribbon.RibbonForm
     {
-        public z()
+        public BaseKartlarForm()
         {
             InitializeComponent();
         }
@@ -26,6 +26,7 @@ namespace Udemy.OgrenciTakip.UI.Win.Forms.BaseForms
                     case BarItem button:
                         button.ItemClick += Button_ItemClick;
                         break;
+                        
                 }
             }
         }
